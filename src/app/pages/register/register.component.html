@@ -10,7 +10,14 @@
     </div>
   </div>
   <div class="separator separator-bottom separator-skew zindex-100">
-    <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      x="0"
+      y="0"
+      viewBox="0 0 2560 100"
+      preserveAspectRatio="none"
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <polygon class="fill-default" points="2560 0 2560 100 0 100"></polygon>
     </svg>
   </div>
@@ -22,44 +29,89 @@
     <div class="col-lg-6 col-md-8">
       <div class="card bg-secondary shadow border-0">
         <div class="card-body px-lg-5 py-lg-5">
-          <form role="form">
+          <form name="registerForm" #registerForm="ngForm">
             <div class="form-group">
               <div class="input-group input-group-alternative mb-3">
                 <div class="input-group-prepend">
-                  <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
+                  <span class="input-group-text"
+                    ><i class="ni ni-hat-3"></i
+                  ></span>
                 </div>
-                <input class="form-control" placeholder="Nombre" type="text">
+                <input
+                  class="form-control"
+                  placeholder="Nombre"
+                  [(ngModel)]="registerObj.name"
+                  name="name"
+                  #name="ngModel"
+                  required
+                />
               </div>
             </div>
             <div class="form-group">
               <div class="input-group input-group-alternative mb-3">
                 <div class="input-group-prepend">
-                  <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                  <span class="input-group-text"
+                    ><i class="ni ni-email-83"></i
+                  ></span>
                 </div>
-                <input class="form-control" placeholder="Correo" type="email" >
+                <input
+                  class="form-control"
+                  placeholder="Correo"
+                  [(ngModel)]="registerObj.email"
+                  name="email"
+                  #name="ngModel"
+                  type="email"
+                  required
+                />
               </div>
             </div>
             <div class="form-group">
               <div class="input-group input-group-alternative">
                 <div class="input-group-prepend">
-                  <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                  <span class="input-group-text"
+                    ><i class="ni ni-lock-circle-open"></i
+                  ></span>
                 </div>
-                <input class="form-control" placeholder="Contraseña" type="password">
+                <input
+                  class="form-control"
+                  placeholder="Contraseña"
+                  [(ngModel)]="registerObj.passowrd"
+                  name="password"
+                  #name="ngModel"
+                  type="password"
+                />
               </div>
             </div>
             <div class="row my-4">
               <div class="col-12">
-                <div class="custom-control custom-control-alternative custom-checkbox">
-                  <input class="custom-control-input" id="customCheckRegister" type="checkbox">
+                <div
+                  class="custom-control custom-control-alternative custom-checkbox"
+                >
+                  <input
+                    class="custom-control-input"
+                    id="customCheckRegister"
+                    type="checkbox"
+                  />
                   <label class="custom-control-label" for="customCheckRegister">
-                    <span class="text-muted">Estoy de acuerdo con las <a href="#!">Condiciones de Privacidad</a></span>
+                    <span class="text-muted"
+                      >Estoy de acuerdo con las
+                      <a href="#!">Condiciones de Privacidad</a></span
+                    >
                   </label>
                 </div>
               </div>
             </div>
             <div class="text-center">
-              <button type="button" (click)="regClick()" class="btn btn-primary mt-4">Crear una cuenta</button>
-              <button type="button" class="btn btn-success mt-4">Soy profesor</button>
+              <button
+                type="button"
+                (click)="regClick()"
+                class="btn btn-primary mt-4"
+              >
+                Crear una cuenta
+              </button>
+              <button type="button" class="btn btn-success mt-4">
+                Soy profesor
+              </button>
             </div>
           </form>
         </div>
