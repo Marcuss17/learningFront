@@ -11,15 +11,23 @@ export class RegisterServices {
 
   sendRegisterData(
     name: string,
+    lastName: string,
     email: string,
+    username: string,
+    age: number,
+    country: string,
     password: string
   ): Observable<any> {
     const data = {
       name,
+      lastName,
       email,
+      username,
+      age,
+      country,
       password,
     };
 
-    return this.http.post(this.commonService.baseUrl + "/api/save-user", data);
+    return this.http.post(this.commonService.baseUrl + "/Auth", data);
   }
 }

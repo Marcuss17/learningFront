@@ -24,12 +24,23 @@ export class RegisterComponent implements OnInit {
 
   regClick() {
     console.log(this.registerObj);
-    // this.registerServices.sendRegisterData(this.registerObj.name, this.registerObj.email, this.registerObj.password).subscribe(
-    //   response => {
-    //     console.log(response);
-    //   }, error => {
-    //     console.log(error);
-    //   }
-    // )
+    this.registerServices
+      .sendRegisterData(
+        this.registerObj.name,
+        this.registerObj.lastName,
+        this.registerObj.email,
+        this.registerObj.username,
+        this.registerObj.age,
+        this.registerObj.country,
+        this.registerObj.password
+      )
+      .subscribe(
+        (response) => {
+          console.log(response);
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
   }
 }
